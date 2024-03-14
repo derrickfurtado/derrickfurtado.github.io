@@ -176,18 +176,62 @@ nav {
     border-width: 1px; */
 }
 
-#htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #axiosLogo, #expressLogo, #postManLogo, #postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo {
-    height: fit-content;
-    width: fit-content;
+#htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #expressLogo, #postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo {
+    height: 45%;
+    width: 45%;
 
     margin-bottom: 30px;
+}
 
-
+#axiosLogo, #postmanLogo {
+    height: 60%;
+    width: 60%;
 }
 
 #projects {
     background-color: #7c848f;
     height: 100%;
+}
+
+#project_section {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+}
+
+#project {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#project-title {
+    display: flex;
+    justify-content: center;
+    background-color: #f7882f;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: xx-large;
+}
+
+#project-description {
+    background-color: #40454b;
+    color: aliceblue;
+    padding: 5%;
+    border-radius: 20px;
+}
+
+#project-assets {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#assets {
+    border-radius: 15px;
+    width: auto;
+    height: 50%;
 }
 
 #contactMe {
