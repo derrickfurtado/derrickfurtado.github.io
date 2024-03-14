@@ -6,20 +6,191 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    /* background-color: rgb(179, 180, 134); */
+    color: #75500c;
 }
 
-nav, section{
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 1000;
+    background-color: #f7882f;
+
+    border-bottom-style: solid;
+    border-color: black;
+    border-width: 5px;
+}
+
+#nav_bar_elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+
+}
+
+#navLeft {
+    display: flex;
+    width: 100%;
+    margin-left: 10%;
+    align-items: center;
+
+
+}
+
+#linkedinLogo, #gitLogo {
+    height: 8%;
+    width: 8%;
+}
+
+#navRight {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+    margin-right: 10%;
+}
+
+#navLeft a,
+#navRight a {
+    margin: 10%;
+    font-size: 25px;
+}
+
+#title_name {
+    display: flex;
+    width: 102%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    
+
+
+    background-color: #7c848f;
+
+
     border-style: solid;
     border-color: black;
     border-width: 1px;
-    margin: 2%;
+}
+
+#name {
+    font-size: 100px;
+    font-weight: bolder;
+    -webkit-text-stroke: 4px black;
+
+    margin-top: 20%;
+    
+}
+
+.aboutMe {
+    margin-bottom: 10%;
+    border-radius: 30px;
+}
+
+#title_name .aboutMe {
+
+    padding: 3%;
+
+    font-size: 20px;
+
+    visibility: hidden;
+    width: 80%;
+    background-color: black;
+
+
+    -webkit-box-shadow: 0px 0px 31px 33px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 31px 33px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 31px 33px rgba(0, 0, 0, 1);
+
+}
+
+#title_name:hover .aboutMe {
+    visibility: visible;
+}
+
+#title {
+
     padding: 1%;
+
+    display: flex;
+    justify-content: center;
+
+
+
+
+
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
 }
 
 #title {
     border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    margin: 2%;
-    padding: 1%;
+    background-color: black;
+    width: fit-content;
+    border-radius: 25px;
+    font-size: 45px;
 }
+
+#skills, #projects, #contactMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 102%;
+    height: 100%;
+    background-color: #40454b;
+}
+
+#listOfSkills {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 80%;
+    width: 80%;
+
+}
+
+#skill1,
+#skill2,
+#skill3 {
+    width: 20vh;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+
+    /* border-style: solid;
+    border-color: black;
+    border-width: 1px; */
+}
+
+#htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #axiosLogo, #expressLogo, #postManLogo, #postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo {
+    height: fit-content;
+    width: fit-content;
+
+    margin-bottom: 30px;
+
+
+}
+
+#projects {
+    background-color: #7c848f;
+    height: 100%;
+}
+
+#contactMe {
+    height: 100%;
+}
+
