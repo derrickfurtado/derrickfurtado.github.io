@@ -1,17 +1,23 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
 body {
     font-family: "Play", sans-serif;
     font-weight: 400;
     font-style: normal;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    /* background-color: rgb(179, 180, 134); */
-    color: #75500c;
+    background-color: #f4f4f4; /* Light background for better readability */
+    color: #333; /* Darker text color for better contrast */
 }
 
-
+/* Navigation */
 nav {
     position: fixed;
     top: 0;
@@ -19,188 +25,142 @@ nav {
     height: 10vh;
     z-index: 1000;
     background-color: #f7882f;
-
-    border-bottom-style: solid;
-    border-color: black;
-    border-width: 5px;
+    border-bottom: 5px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
 }
 
 #nav_bar_elements {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    height: 100%;
     width: 100%;
+}
 
-
+#navLeft, #navRight {
+    display: flex;
+    align-items: center;
 }
 
 #navLeft {
-    display: flex;
-    width: 100%;
     margin-left: 10%;
-    align-items: center;
-
-
-}
-
-#linkedinLogo, #gitLogo {
-    height: 8%;
-    width: 8%;
 }
 
 #navRight {
-    display: flex;
     justify-content: flex-end;
-    width: 100%;
-    align-items: center;
     margin-right: 10%;
 }
 
-#navLeft a,
-#navRight a {
-    margin: 10%;
-    font-size: 25px;
+#linkedinLogo img, #gitLogo img {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
 }
 
+#navLeft a, #navRight a {
+    margin: 0 10px;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#navRight #resume {
+    color: black;
+}
+
+#navLeft a:hover, #navRight a:hover {
+    color: #333;
+}
+
+/* Title Section */
 #title_name {
     display: flex;
-    width: 102%;
-    height: 100%;
     flex-direction: column;
     align-items: center;
-    
-
-
+    width: 100%;
+    padding: 2rem 0;
     background-color: #7c848f;
-
-
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    border: 1px solid black;
 }
 
 #name {
     font-size: 100px;
     font-weight: bolder;
     -webkit-text-stroke: 4px black;
-
     margin-top: 20%;
-    
 }
 
 .aboutMe {
-    margin-bottom: 10%;
+    margin: 10% 0;
+    padding: 40px;
     border-radius: 30px;
+    border: solid;
+    border-color: black;
 }
 
-#title_name .aboutMe {
-
-    padding: 3%;
-
-    font-size: 20px;
-
-    visibility: hidden;
-    width: 80%;
-    background-color: black;
-
-
-    -webkit-box-shadow: 0px 0px 31px 33px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 31px 33px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 31px 33px rgba(0, 0, 0, 1);
-
-}
-
-#title_name:hover .aboutMe {
-    visibility: visible;
-}
-
+/* Section Titles */
 #title {
-
+    margin-top: 40px;
     padding: 1%;
-
     display: flex;
     justify-content: center;
-
-
-
-
-
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-}
-
-#title {
-    border-style: solid;
     background-color: black;
-    width: fit-content;
+    border: 1px solid black;
     border-radius: 25px;
     font-size: 45px;
+    color: #fff;
 }
 
+/* Skills, Projects, Contact Sections */
 #skills, #projects, #contactMe {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 102%;
-    height: 100%;
+    width: 100%;
+    padding: 2rem 0;
     background-color: #40454b;
+    color: #fff;
 }
 
 #listOfSkills {
     display: flex;
     justify-content: space-around;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    height: 80%;
+    margin: 5% 0;
     width: 80%;
-
 }
 
-#skill1,
-#skill2,
-#skill3 {
+#skill1, #skill2, #skill3 {
     width: 20vh;
-    height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-
-
-    /* border-style: solid;
-    border-color: black;
-    border-width: 1px; */
 }
 
-#htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #expressLogo, #postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo {
+#htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #expressLogo, #postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo, #axiosLogo, #postmanLogo {
     height: 45%;
     width: 45%;
-
     margin-bottom: 30px;
 }
 
-#axiosLogo, #postmanLogo {
-    height: 60%;
-    width: 60%;
+#postmanLogo {
+    height: 80%;
+    width: 95%;
 }
 
 #projects {
     background-color: #7c848f;
-    height: 100%;
 }
 
 #project_section {
     display: flex;
     justify-content: center;
     width: 80%;
-    height: 100%;
+    padding: 2rem 0;
 }
 
-#project {
+#project_1 {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -217,7 +177,7 @@ nav {
 
 #project-description {
     background-color: #40454b;
-    color: aliceblue;
+    color: #fff;
     padding: 5%;
     border-radius: 20px;
 }
@@ -238,3 +198,51 @@ nav {
     height: 100%;
 }
 
+/* Contact Form */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20dvw;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #7c848f;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 10%;
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.formGroup input, .formGroup textarea {
+    padding: 10px;
+    border: 1px solid #75500c;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+}
+
+#submitBtn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f7882f;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submitBtn:hover {
+    background-color: #e07626;
+}
