@@ -79,7 +79,7 @@ nav {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 2rem 0;
+    padding: 0;
     background-color: #7c848f;
     border: 1px solid black;
 }
@@ -88,12 +88,13 @@ nav {
     font-size: 100px;
     font-weight: bolder;
     -webkit-text-stroke: 4px black;
-    margin-top: 20%;
+    margin-top: 16%;
 }
 
 
-.aboutMe {
-    margin: 10%;
+#aboutMe {
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 40px;
     border-radius: 30px;
     border: solid;
