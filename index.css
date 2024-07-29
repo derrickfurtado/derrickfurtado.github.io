@@ -91,8 +91,9 @@ nav {
     margin-top: 20%;
 }
 
+
 .aboutMe {
-    margin: 10% 0;
+    margin: 10%;
     padding: 40px;
     border-radius: 30px;
     border: solid;
@@ -126,6 +127,7 @@ nav {
 #listOfSkills {
     display: flex;
     justify-content: space-around;
+    align-content: start;
     margin: 5% 0;
     width: 80%;
 }
@@ -134,19 +136,57 @@ nav {
     width: 20vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 }
 
-#htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #expressLogo, #postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo, #axiosLogo, #postmanLogo {
-    height: 45%;
-    width: 45%;
+#htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #expressLogo, #postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo, #axiosLogo, #postmanLogo, #pythonLogo, #flaskLogo, #sqlalchemyLogo, #herokuLogo {
+    height: 55%;
+    width: 55%;
     margin-bottom: 30px;
 }
 
-#postmanLogo {
+#postmanLogo{
     height: 80%;
     width: 95%;
+}
+
+#sqlalchemyLogo {
+    width: 95%;
+}
+
+.skill_name_container {
+    position: relative;
+    display: inline-block;
+}
+
+svg path {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.skill_name {
+    visibility: hidden;
+    background-color: #f4f4f4;
+    color: black;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skill_name_container:hover .skill_name {
+    visibility: visible;
+    opacity: 1;
 }
 
 #projects {
@@ -155,15 +195,17 @@ nav {
 
 #project_section {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-content: center;
     width: 80%;
     padding: 2rem 0;
 }
 
-#project_1 {
+#project_1, #project_2 {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 10%;
 }
 
 #project-title {
@@ -190,8 +232,13 @@ nav {
 
 #assets {
     border-radius: 15px;
-    width: auto;
-    height: 50%;
+    width: 30%;
+}
+
+#assets_2 {
+    border-radius: 15px;
+    width: 48%;
+    margin: 5px;
 }
 
 #contactMe {
@@ -245,4 +292,162 @@ nav {
 
 #submitBtn:hover {
     background-color: #e07626;
+}
+
+
+/* Media Queries */
+
+/* Mobile devices */
+@media (max-width: 600px) {
+    /* Navigation */
+    nav {
+        padding: 0 5%;
+        height: 8vh;
+    }
+
+    #navLeft, #navRight {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #navLeft a, #navRight a {
+        font-size: 18px;
+        margin: 0 5px;
+    }
+
+    #linkedinLogo img, #gitLogo img {
+        height: 25px;
+        width: 25px;
+    }
+
+    /* Title Section */
+    #name {
+        font-size: 50px;
+        margin-top: 15%;
+    }
+
+    .aboutMe {
+        margin: 5% 0;
+        padding: 20px;
+    }
+
+    /* Section Titles */
+    #title {
+        font-size: 30px;
+    }
+
+    /* Skills, Projects, Contact Sections */
+    #listOfSkills {
+        flex-direction: column;
+        margin: 2% 0;
+        width: 90%;
+    }
+
+    #skill1, #skill2, #skill3 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #project_section {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    #project-assets {
+        flex-direction: column;
+    }
+
+    #assets {
+        width: 100%;
+        height: auto;
+    }
+
+    #assets_2 {
+        width: 100%;
+        height: auto;
+    }
+    #contactForm {
+        width: 80%;
+        padding: 10px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* Navigation */
+    nav {
+        padding: 0 8%;
+        height: 9vh;
+    }
+
+    #navLeft, #navRight {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+
+    #navLeft a, #navRight a {
+        font-size: 22px;
+        margin: 0 8px;
+    }
+
+    #linkedinLogo img, #gitLogo img {
+        height: 28px;
+        width: 28px;
+    }
+
+    /* Title Section */
+    #name {
+        font-size: 80px;
+        margin-top: 18%;
+    }
+
+    .aboutMe {
+        margin: 7% 0;
+        padding: 30px;
+    }
+
+    /* Section Titles */
+    #title {
+        font-size: 38px;
+    }
+
+    /* Skills, Projects, Contact Sections */
+    #listOfSkills {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 3% 0;
+        width: 85%;
+    }
+
+    #skill1, #skill2, #skill3 {
+        width: 40%;
+        margin-bottom: 20px;
+    }
+
+    #project_section {
+        flex-direction: row;
+        padding: 1.5rem 0;
+    }
+
+    #project-assets {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #assets {
+        width: 48%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    #assets_2 {
+        width: 48%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    #contactForm {
+        width: 60%;
+        padding: 15px;
+    }
 }
