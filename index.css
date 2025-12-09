@@ -1,3 +1,5 @@
+/* Minimalistic Portfolio Design */
+
 /* General Reset */
 * {
     margin: 0;
@@ -7,14 +9,12 @@
 
 /* Body Styles */
 body {
-    font-family: "Play", sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 400;
-    font-style: normal;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f4f4f4; /* Light background for better readability */
-    color: #333; /* Darker text color for better contrast */
+    line-height: 1.6;
+    color: #2d3748;
+    background-color: #ffffff;
+    scroll-behavior: smooth;
 }
 
 /* Navigation */
@@ -22,55 +22,84 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 10vh;
     z-index: 1000;
-    background-color: #f7882f;
-    border-bottom: 5px solid black;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
 }
 
 #nav_bar_elements {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-}
-
-#navLeft, #navRight {
-    display: flex;
-    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 #navLeft {
-    margin-left: 10%;
+    display: flex;
+    gap: 2.5rem;
 }
 
 #navRight {
-    justify-content: flex-end;
-    margin-right: 10%;
-}
-
-#linkedinLogo img, #gitLogo img {
-    height: 30px;
-    width: 30px;
-    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 #navLeft a, #navRight a {
-    margin: 0 10px;
-    font-size: 25px;
-    color: #fff;
+    font-size: 0.95rem;
+    color: #4a5568;
     text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease;
+    position: relative;
 }
 
-#navRight #resume {
-    color: black;
+#navLeft a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #2d3748;
+    transition: width 0.3s ease;
+}
+
+#navLeft a:hover::after {
+    width: 100%;
 }
 
 #navLeft a:hover, #navRight a:hover {
-    color: #333;
+    color: #2d3748;
+}
+
+#linkedinLogo img, #gitLogo img {
+    height: 20px;
+    width: 20px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+#linkedinLogo:hover img, #gitLogo:hover img {
+    opacity: 1;
+}
+
+#navRight #resume {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+#navRight #resume:hover {
+    border-color: #2d3748;
+    background-color: #f7fafc;
 }
 
 /* Title Section */
@@ -79,376 +108,418 @@ nav {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 0;
-    background-color: #7c848f;
-    border: 1px solid black;
+    padding: 12rem 2rem 6rem;
+    background-color: #ffffff;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 #name {
-    font-size: 100px;
-    font-weight: bolder;
-    -webkit-text-stroke: 4px black;
-    margin-top: 16%;
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #1a202c;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-
 #aboutMe {
-    margin-left: 10%;
-    margin-right: 10%;
-    padding: 40px;
-    border-radius: 30px;
-    border: solid;
-    border-color: black;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    max-width: 700px;
+    text-align: left;
+    padding: 0;
+}
+
+#aboutMe br {
+    margin-bottom: 1rem;
 }
 
 /* Section Titles */
 #title {
-    margin-top: 40px;
-    padding: 1%;
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    border: 1px solid black;
-    border-radius: 25px;
-    font-size: 45px;
-    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: -0.01em;
 }
 
-/* Skills, Projects, Contact Sections */
-#skills, #projects, #contactMe {
+/* Skills Section */
+#skills {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 2rem 0;
-    background-color: #40454b;
-    color: #fff;
+    padding: 6rem 2rem;
+    background-color: #f7fafc;
 }
 
 #listOfSkills {
-    display: flex;
-    justify-content: space-around;
-    align-content: start;
-    margin: 5% 0;
-    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2.5rem;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 #skill1, #skill2, #skill3 {
-    width: 20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-#htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #expressLogo, #postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo, #axiosLogo, #postmanLogo, #pythonLogo, #flaskLogo, #sqlalchemyLogo, #herokuLogo {
-    height: 55%;
-    width: 55%;
-    margin-bottom: 30px;
-}
-
-#postmanLogo{
-    height: 80%;
-    width: 95%;
-}
-
-#sqlalchemyLogo {
-    width: 95%;
+    display: contents;
 }
 
 .skill_name_container {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-svg path {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+.skill_name_container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e0;
+}
+
+#htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #expressLogo, 
+#postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo, 
+#axiosLogo, #postmanLogo, #pythonLogo, #flaskLogo, #sqlalchemyLogo, 
+#herokuLogo {
+    height: 48px;
+    width: 48px;
+    margin-bottom: 0.75rem;
+}
+
+#postmanLogo {
+    height: 48px;
+    width: 48px;
+}
+
+#sqlalchemyLogo {
+    width: 48px;
+    height: 48px;
 }
 
 .skill_name {
-    visibility: hidden;
-    background-color: #f4f4f4;
-    color: black;
+    font-size: 0.85rem;
+    color: #4a5568;
+    font-weight: 500;
     text-align: center;
-    padding: 5px;
-    border-radius: 6px;
-
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.skill_name_container:hover .skill_name {
     visibility: visible;
     opacity: 1;
+    position: static;
+    transform: none;
+    background: none;
+    padding: 0;
+    border-radius: 0;
 }
 
+/* Projects Section */
 #projects {
-    background-color: #7c848f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 6rem 2rem;
+    background-color: #ffffff;
 }
 
 #project_section {
     display: flex;
     flex-direction: column;
-    align-content: center;
-    width: 80%;
-    padding: 2rem 0;
+    gap: 5rem;
+    max-width: 1100px;
+    width: 100%;
 }
 
 #project_1, #project_2 {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-bottom: 10%;
+    gap: 1.5rem;
 }
 
 #project-title {
-    display: flex;
-    justify-content: center;
-    background-color: #f7882f;
-    padding: 10px;
-    border-radius: 30px;
-    font-size: xx-large;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
 }
 
 #project-description {
-    background-color: #40454b;
-    color: #fff;
-    padding: 5%;
-    border-radius: 20px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+#project-description a {
+    color: #2d3748;
+    text-decoration: none;
+    border-bottom: 1px solid #cbd5e0;
+    transition: border-color 0.2s ease;
+}
+
+#project-description a:hover {
+    border-color: #2d3748;
+}
+
+#project-description .project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background-color: #1a202c;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: none;
+}
+
+#project-description .project-link:hover {
+    background-color: #2d3748;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 #project-assets {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+#assets, #assets_2 {
     width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#assets {
-    border-radius: 15px;
-    width: 30%;
+#assets:hover, #assets_2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-#assets_2 {
-    border-radius: 15px;
-    width: 48%;
-    margin: 5px;
+#assets_2 iframe {
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
 }
 
+/* Contact Section */
 #contactMe {
-    height: 100%;
-}
-
-/* Contact Form */
-#contactForm {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20dvw;
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #7c848f;
-    border: 1px solid black;
-    border-radius: 20px;
+    width: 100%;
+    padding: 6rem 2rem;
+    background-color: #f7fafc;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 1rem;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .formGroup {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: 10%;
-    margin-bottom: 15px;
+    width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 .formGroup label {
-    margin-bottom: 5px;
-    font-size: 18px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #4a5568;
+    font-weight: 500;
 }
 
 .formGroup input, .formGroup textarea {
-    padding: 10px;
-    border: 1px solid #75500c;
-    border-radius: 10px;
-    font-size: 16px;
-    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #2d3748;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formGroup input:focus, .formGroup textarea:focus {
+    outline: none;
+    border-color: #2d3748;
+    box-shadow: 0 0 0 3px rgba(45, 55, 72, 0.1);
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 #submitBtn {
-    padding: 10px 20px;
+    padding: 0.875rem 2rem;
     border: none;
-    border-radius: 10px;
-    background-color: #f7882f;
-    color: #fff;
-    font-size: 18px;
+    border-radius: 4px;
+    background-color: #1a202c;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.2s ease;
+    font-family: inherit;
 }
 
 #submitBtn:hover {
-    background-color: #e07626;
+    background-color: #2d3748;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+#submitBtn:active {
+    transform: translateY(0);
+}
 
 /* Media Queries */
 
 /* Mobile devices */
-@media (max-width: 600px) {
-    /* Navigation */
+@media (max-width: 768px) {
     nav {
-        padding: 0 5%;
-        height: 8vh;
-    }
-
-    #navLeft, #navRight {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    #navLeft a, #navRight a {
-        font-size: 18px;
-        margin: 0 5px;
-    }
-
-    #linkedinLogo img, #gitLogo img {
-        height: 25px;
-        width: 25px;
-    }
-
-    /* Title Section */
-    #name {
-        font-size: 50px;
-        margin-top: 15%;
-    }
-
-    .aboutMe {
-        margin: 5% 0;
-        padding: 20px;
-    }
-
-    /* Section Titles */
-    #title {
-        font-size: 30px;
-    }
-
-    /* Skills, Projects, Contact Sections */
-    #listOfSkills {
-        flex-direction: column;
-        margin: 2% 0;
-        width: 90%;
-    }
-
-    #skill1, #skill2, #skill3 {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    #project_section {
-        flex-direction: column;
         padding: 1rem 0;
     }
 
+    #nav_bar_elements {
+        padding: 0 1.5rem;
+    }
+
+    #navLeft {
+        gap: 1.5rem;
+    }
+
+    #navLeft a, #navRight a {
+        font-size: 0.85rem;
+    }
+
+    #navRight {
+        gap: 1rem;
+    }
+
+    #linkedinLogo img, #gitLogo img {
+        height: 18px;
+        width: 18px;
+    }
+
+    #title_name {
+        padding: 8rem 1.5rem 4rem;
+    }
+
+    #name {
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #aboutMe {
+        font-size: 1rem;
+    }
+
+    #skills, #projects, #contactMe {
+        padding: 4rem 1.5rem;
+    }
+
+    #title {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    #listOfSkills {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .skill_name_container {
+        padding: 1.25rem;
+    }
+
+    #htmlLogo, #cssLogo, #javaScriptLogo, #nodeJsLogo, #expressLogo, 
+    #postgresLogo, #sequelizeLogo, #seleniumLogo, #githubLogo, #awsLogo, 
+    #axiosLogo, #postmanLogo, #pythonLogo, #flaskLogo, #sqlalchemyLogo, 
+    #herokuLogo {
+        height: 40px;
+        width: 40px;
+    }
+
+    #project_section {
+        gap: 4rem;
+    }
+
+    #project-title {
+        font-size: 1.5rem;
+    }
+
     #project-assets {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
-    #assets {
-        width: 100%;
-        height: auto;
-    }
-
-    #assets_2 {
-        width: 100%;
-        height: auto;
-    }
     #contactForm {
-        width: 80%;
-        padding: 10px;
+        padding: 2rem 1.5rem;
     }
 }
 
 /* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-    /* Navigation */
-    nav {
-        padding: 0 8%;
-        height: 9vh;
+@media (min-width: 769px) and (max-width: 1024px) {
+    #nav_bar_elements {
+        padding: 0 2rem;
     }
 
-    #navLeft, #navRight {
-        margin-left: 8%;
-        margin-right: 8%;
+    #title_name {
+        padding: 10rem 2rem 5rem;
     }
 
-    #navLeft a, #navRight a {
-        font-size: 22px;
-        margin: 0 8px;
-    }
-
-    #linkedinLogo img, #gitLogo img {
-        height: 28px;
-        width: 28px;
-    }
-
-    /* Title Section */
     #name {
-        font-size: 80px;
-        margin-top: 18%;
+        font-size: 3rem;
     }
 
-    .aboutMe {
-        margin: 7% 0;
-        padding: 30px;
-    }
-
-    /* Section Titles */
-    #title {
-        font-size: 38px;
-    }
-
-    /* Skills, Projects, Contact Sections */
     #listOfSkills {
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 3% 0;
-        width: 85%;
-    }
-
-    #skill1, #skill2, #skill3 {
-        width: 40%;
-        margin-bottom: 20px;
-    }
-
-    #project_section {
-        flex-direction: row;
-        padding: 1.5rem 0;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 2rem;
     }
 
     #project-assets {
-        flex-direction: row;
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    #nav_bar_elements {
+        padding: 0 3rem;
     }
 
-    #assets {
-        width: 48%;
-        height: auto;
-        margin-bottom: 10px;
+    #title_name {
+        padding: 14rem 2rem 7rem;
     }
 
-    #assets_2 {
-        width: 48%;
-        height: auto;
-        margin-bottom: 10px;
-    }
-
-    #contactForm {
-        width: 60%;
-        padding: 15px;
+    #name {
+        font-size: 4rem;
     }
 }
