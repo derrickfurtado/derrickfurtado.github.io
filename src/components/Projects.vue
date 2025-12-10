@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="w-full py-24 px-8 bg-white">
+  <section id="projects" class="flex justify-center items-center w-full min-h-screen py-24 px-8 bg-white">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-2xl font-semibold text-gray-900 mb-12 text-center tracking-tight">
         PROJECTS

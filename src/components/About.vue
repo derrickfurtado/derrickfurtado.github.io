@@ -1,6 +1,6 @@
 <template>
-  <section id="about" class="w-full py-32 px-8 bg-white">
-    <div class="max-w-4xl mx-auto flex flex-col items-center">
+  <section id="about" class="relative flex justify-center items-center w-full min-h-screen bg-slate-400 py-20 overflow-hidden">
+    <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
       <h1 class="text-5xl md:text-6xl font-semibold text-gray-900 mb-8 tracking-tight">
         DERRICK FURTADO
       </h1>
@@ -27,6 +27,7 @@
         </p>
       </div>
     </div>
+    <img src="/assets/myself/portrait.png" class="!absolute !bottom-0 !right-0 !w-64 !h-auto rounded-lg shadow-lg opacity-30 object-cover">
   </section>
 </template>
 

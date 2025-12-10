@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="w-full py-24 px-8 bg-gray-50">
+  <section id="contact" class="flex justify-center items-center w-full min-h-screen py-24 px-8 bg-gray-50">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-2xl font-semibold text-gray-900 mb-12 text-center tracking-tight">
         CONTACT ME
